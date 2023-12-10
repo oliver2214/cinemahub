@@ -9,7 +9,7 @@
       "type": "python",
       "request": "launch",
       "program": "${workspaceFolder}\\cinemahub\\manage.py",
-      "args": ["runserver", "--noreload"],
+      "args": ["runserver"],
       "django": true,
       "justMyCode": true
     }

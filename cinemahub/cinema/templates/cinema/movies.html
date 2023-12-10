@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+<ul>
+    {% for el in menu %}
+    <li><a href="{% url el.url_name %}">{{ el.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h1>Список фильмов</h1>
+{% for movie in movies %}
+{% if movie.description %}
+<ul>
+    <li>
+        {% if not forloop.first %}
+        <hr>
+        {% endif %}
+        <h2> {{ movie.title }} </h2>
+        <p> Жанр: {{ movie.genre }}</p>
+        <p> Описание: {{ movie.description }} </p>
+        <a href="{% url 'movie' id=movie.id %}">Подробнее</a>
+    </li>
+</ul>
+{% endif %}
+{% endfor %}
+
+</body>

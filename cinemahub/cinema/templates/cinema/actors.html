@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+<ul>
+    {% for el in menu %}
+    <li><a href="{% url el.url_name %}">{{ el.title }}</a></li>
+    {% endfor %}
+</ul>
+
+<h1>Список актёров</h1>
+{% for actor in actors %}
+<ul>
+    <li>
+        {% if not forloop.first %}
+        <hr>
+        {% endif %}
+        <h2> {{ actor.name }} </h2>
+        <p> Год рождения: {{ actor.birth_year }}</p>
+        <p> Национальность: {{ actor.nationality }} </p>
+        <a href="{% url 'actor' id=actor.id %}">Подробнее</a>
+    </li>
+</ul>
+{% endfor %}
+
+</body>
