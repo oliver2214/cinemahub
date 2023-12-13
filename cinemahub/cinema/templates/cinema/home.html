@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CinemaHub</title>
-</head>
 
-<body>
+{% extends 'base.html' %}
 
-    <header>
-        <h1>Добро пожаловать на CinemaHub!</h1>
-        <p>Ваш источник киноновостей и развлечений.</p>
-    </header>
-
-    <nav>
-        <ul>
-            {% for el in menu %}
-            <li><a href="{% url el.url_name %}">{{ el.title }}</a></li>
-            {% endfor %}
-        </ul>
-    </nav>
-
-    <footer>
-        <p>&copy; 2023 CinemaHub. Все права защищены.</p>
-    </footer>
-
-</body>
+{% block content %}
+{% include 'cinema/includes/nav.html' %}
+<h1>Content</h1>
+{% endblock %}

@@ -18,7 +18,7 @@ def home(request):
     data = {
         "menu": menu
     }
-    return HttpResponse(render(request, "cinema/home.html", context=data))
+    return render(request, "cinema/home.html", context=data)
 
 
 def about(request):

@@ -1,15 +1,7 @@
-<!DOCTYPE HTML>
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
 
-<body>
-<ul>
-    {% for el in menu %}
-    <li><a href="{% url el.url_name %}">{{ el.title }}</a></li>
-    {% endfor %}
-</ul>
+{% extends 'base.html' %}
+
+{% block content %}
 
 <h1>Список фильмов</h1>
 {% for movie in movies %}
@@ -28,4 +20,4 @@
 {% endif %}
 {% endfor %}
 
-</body>
+{% endblock %}
